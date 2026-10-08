@@ -1,0 +1,52 @@
+<div class="contenedor-principal">
+    <div class="tarjeta-formulario">
+        <h2>Calculadora de Signo Chino</h2>
+
+        <div class="grupo-input">
+            <label>Nombre:</label>
+            <input [(ngModel)]="nombre" type="text" placeholder="Tu nombre">
+        </div>
+
+        <div class="grupo-input">
+            <label>Apellido Paterno:</label>
+            <input [(ngModel)]="apaterno" type="text" placeholder="Apellido paterno">
+        </div>
+
+        <div class="grupo-input">
+            <label>Apellido Materno:</label>
+            <input [(ngModel)]="amaterno" type="text" placeholder="Apellido materno">
+        </div>
+
+        <div class="fila-fecha">
+            <div>
+                <label>Día:</label>
+                <input [(ngModel)]="dia" type="number" placeholder="DD">
+            </div>
+            <div>
+                <label>Mes:</label>
+                <input [(ngModel)]="mes" type="number" placeholder="MM">
+            </div>
+            <div>
+                <label>Año:</label>
+                <input [(ngModel)]="anio" type="number" placeholder="AAAA">
+            </div>
+        </div>
+
+        <div class="grupo-sexo">
+            <label>Sexo:</label>
+            <label><input [(ngModel)]="sexo" type="radio" name="sexo" value="Masculino"> Masculino</label>
+            <label><input [(ngModel)]="sexo" type="radio" name="sexo" value="Femenino"> Femenino</label>
+        </div>
+
+        <button (click)="calcular()" class="btn-calcular">Calcular Resultados</button>
+    </div>
+
+    <!-- Resultados -->
+    <div *ngIf="mostrargriterio" class="tarjeta-resultado">
+        <h3>Resultado</h3>
+        <p><strong>Nombre completo:</strong> {{ nombre }} {{ apaterno }} {{ amaterno }}</p>
+        <p><strong>Sexo:</strong> {{ sexo }}</p>
+        <p><strong>Edad:</strong> {{ edadcalculada }} años</p>
+        <p class="signo-texto"><strong>Signo Zodiacal Chino:</strong> {{ signo }}</p>
+    </div>
+</div>
